@@ -22,11 +22,13 @@ except ImportError:
     import unittest
 
 
-def get_local_conf(filename=None):
+def get_local_conf_path():
+    """Get the absolute path to local configuration file"""
+    return os.path.join(os.path.dirname(__file__), 'kaoz.local.conf')
+
+def get_local_conf():
     """Load local configuration"""
-    if not filename:
-        filename = "kaoz.local.conf"
-    path = os.path.join(os.path.dirname(__file__), filename)
+    path = get_local_conf_path()
     config = kaoz.bot.get_default_config()
     config.read(path)
     return config
