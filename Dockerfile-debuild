@@ -1,0 +1,38 @@
+# Usage: docker build -f Dockerfile-debuild -t kaoz:debuild .
+FROM debian:8
+LABEL Description="Build Debian package for Kaoz IRC notifier daemon"
+
+# Install build and runtime dependencies
+# cf. https://wiki.debian.org/IntroDebianPackaging
+RUN \
+    apt-get -qq update && \
+    apt-get install -qqy \
+        build-essential \
+        debhelper \
+        devscripts \
+        dh-exec \
+        python \
+        python-irc \
+        python-setuptools && \
+    apt-get clean
+
+COPY . /build/kaoz
+
+# Grab the package version
+RUN cd /build/kaoz && python -c 'import kaoz;print(kaoz.__version__)' > /build/version
+
+# Create a source tarball with a Debian name
+RUN cd /build/kaoz && python setup.py sdist
+RUN mkdir /build/debian
+RUN cp -v "/build/kaoz/dist/kaoz-$(cat /build/version).tar.gz" "/build/debian/kaoz_$(cat /build/version).orig.tar.gz"
+
+# Extract the source tarball and copy the debian/ directory
+RUN tar -C /build/debian/ -xf "/build/debian/kaoz_$(cat /build/version).orig.tar.gz"
+RUN mv "/build/debian/kaoz-$(cat /build/version)" "/build/debian/kaoz"
+RUN cp -r "/build/kaoz/debian" "/build/debian/kaoz/"
+
+# Build a Debian package without signing it, but run tests and lintian.
+RUN cd build/debian/kaoz && debuild -uc -us
+
+# Set the work directory to where the Debian packages are produced
+WORKDIR /build/debian/
