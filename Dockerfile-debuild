@@ -1,5 +1,5 @@
 # Usage: docker build -f Dockerfile-debuild -t kaoz:debuild .
-FROM debian:8
+FROM debian:9
 LABEL Description="Build Debian package for Kaoz IRC notifier daemon"
 
 # Install build and runtime dependencies
