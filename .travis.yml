@@ -242,9 +242,47 @@ matrix:
       env: TOXENV=py36-irc164
     - python: 3.6
       env: TOXENV=py36-ircLAST
+    - python: 3.7
+      env: TOXENV=py37-irc121
+    - python: 3.7
+      env: TOXENV=py37-irc122
+    - python: 3.7
+      env: TOXENV=py37-irc123
+    - python: 3.7
+      env: TOXENV=py37-irc124
+    - python: 3.7
+      env: TOXENV=py37-irc130
+    - python: 3.7
+      env: TOXENV=py37-irc131
+    - python: 3.7
+      env: TOXENV=py37-irc132
+    - python: 3.7
+      env: TOXENV=py37-irc133
+    - python: 3.7
+      env: TOXENV=py37-irc140
+    - python: 3.7
+      env: TOXENV=py37-irc141
+    - python: 3.7
+      env: TOXENV=py37-irc142
+    - python: 3.7
+      env: TOXENV=py37-irc150
+    - python: 3.7
+      env: TOXENV=py37-irc151
+    - python: 3.7
+      env: TOXENV=py37-irc160
+    - python: 3.7
+      env: TOXENV=py37-irc161
+    - python: 3.7
+      env: TOXENV=py37-irc162
+    - python: 3.7
+      env: TOXENV=py37-irc163
+    - python: 3.7
+      env: TOXENV=py37-irc164
+    - python: 3.7
+      env: TOXENV=py37-ircLAST
 
     # Linting
-    - python: "3.6"
+    - python: "3.7"
       env: TOXENV=lint
 
 notifications:
