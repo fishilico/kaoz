@@ -47,10 +47,13 @@ jobs:
       with:
         python-version: ${{ matrix.python }}
 
-    - name: Install tox
-      run: pip install tox
+    - name: Install dependencies
+      run: pip install flake8 tox
 
     - name: Run tests
       run: |
         export TOXENV="py$(python3 -c 'import sys;print("%d%d" % sys.version_info[:2])')-irc${{ matrix.irc }}"
         tox
+
+    - name: Lint
+      run: make lint
