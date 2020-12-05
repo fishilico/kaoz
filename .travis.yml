@@ -259,9 +259,55 @@ matrix:
       env: TOXENV=py38-irc190
     - python: 3.8
       env: TOXENV=py38-ircLAST
+    - python: 3.9
+      env: TOXENV=py39-irc121
+    - python: 3.9
+      env: TOXENV=py39-irc122
+    - python: 3.9
+      env: TOXENV=py39-irc123
+    - python: 3.9
+      env: TOXENV=py39-irc124
+    - python: 3.9
+      env: TOXENV=py39-irc130
+    - python: 3.9
+      env: TOXENV=py39-irc131
+    - python: 3.9
+      env: TOXENV=py39-irc132
+    - python: 3.9
+      env: TOXENV=py39-irc133
+    - python: 3.9
+      env: TOXENV=py39-irc140
+    - python: 3.9
+      env: TOXENV=py39-irc141
+    - python: 3.9
+      env: TOXENV=py39-irc142
+    - python: 3.9
+      env: TOXENV=py39-irc150
+    - python: 3.9
+      env: TOXENV=py39-irc151
+    - python: 3.9
+      env: TOXENV=py39-irc160
+    - python: 3.9
+      env: TOXENV=py39-irc161
+    - python: 3.9
+      env: TOXENV=py39-irc162
+    - python: 3.9
+      env: TOXENV=py39-irc163
+    - python: 3.9
+      env: TOXENV=py39-irc164
+    - python: 3.9
+      env: TOXENV=py39-irc170
+    - python: 3.9
+      env: TOXENV=py39-irc171
+    - python: 3.9
+      env: TOXENV=py39-irc180
+    - python: 3.9
+      env: TOXENV=py39-irc190
+    - python: 3.9
+      env: TOXENV=py39-ircLAST
 
     # Linting
-    - python: "3.8"
+    - python: "3.9"
       env: TOXENV=lint
 
 notifications:
