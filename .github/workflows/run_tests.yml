@@ -1,0 +1,56 @@
+name: Run tests
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        python:
+          - 3.9
+          - 3.8
+          - 3.7
+          - 3.6
+          - 3.5
+        irc:
+          - 121
+          - 122
+          - 123
+          - 124
+          - 130
+          - 131
+          - 132
+          - 133
+          - 140
+          - 141
+          - 142
+          - 150
+          - 151
+          - 160
+          - 161
+          - 162
+          - 163
+          - 164
+          - 170
+          - 172
+          - 180
+          - 190
+          - LAST
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python }}
+
+    - name: Install tox
+      run: pip install tox
+
+    - name: Run tests
+      run: |
+        export TOXENV="py$(python3 -c 'import sys;print("%d%d" % sys.version_info[:2])')-irc${{ matrix.irc }}"
+        tox
