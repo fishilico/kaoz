@@ -330,8 +330,7 @@ class Publisher(irc.client.SimpleIRCClient):
                 # Check state consistency
                 if self._has_welcome:
                     logger.critical(
-                        "Oops, bad internal state " +
-                        "(server is not really connected), force disconnect")
+                        "Oops, bad internal state (server is not really connected), force disconnect")
                     self._has_welcome = False
                     self.connection.disconnect("Bad internal state")
             except Exception:

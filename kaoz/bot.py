@@ -79,9 +79,8 @@ def main(argv):
         log_handler = logging.handlers.SysLogHandler(
             '/dev/log',
             facility=logging.handlers.SysLogHandler.LOG_DAEMON)
-        log_handler.setFormatter(logging.Formatter(
-            ('kaoz[%d]: ' % os.getpid()) +
-            '[%(levelname)s] %(name)s: %(message)s'))
+        logfmt = ('kaoz[%d]: ' % os.getpid()) + '[%(levelname)s] %(name)s: %(message)s'
+        log_handler.setFormatter(logging.Formatter(logfmt))
         root_logger = logging.getLogger()
         root_logger.setLevel(loglevel)
         root_logger.addHandler(log_handler)

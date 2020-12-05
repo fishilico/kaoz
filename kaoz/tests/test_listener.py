@@ -90,16 +90,16 @@ class ListenerTestCase(unittest.TestCase):
 
     def test_multiple_lines(self):
         sent_lines = ["#chan%d:Line %d" % (i, i) for i in range(10)]
-        packet = "\r\n".join([(self.password + ":" + l) for l in sent_lines])
+        packet = "\r\n".join([(self.password + ":" + line) for line in sent_lines])
         with kaoz.listener.TCPListener(self.pub, self.config):
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             sock.connect((self.host, self.port))
             sock.sendall(packet.encode('UTF-8'))
             sock.close()
             try:
-                for l in sent_lines:
+                for line in sent_lines:
                     rcvd_line = self.pub.lines.get(timeout=2)
-                    self.assertEqual(rcvd_line, l, "Wrong published line")
+                    self.assertEqual(rcvd_line, line, "Wrong published line")
             except queue.Empty:
                 self.fail("Publisher didn't receive enough")
         self.assertTrue(self.pub.lines.empty(), "Too many published lines")
