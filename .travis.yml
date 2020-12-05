@@ -279,6 +279,14 @@ matrix:
     - python: 3.7
       env: TOXENV=py37-irc164
     - python: 3.7
+      env: TOXENV=py37-irc170
+    - python: 3.7
+      env: TOXENV=py37-irc171
+    - python: 3.7
+      env: TOXENV=py37-irc180
+    - python: 3.7
+      env: TOXENV=py37-irc190
+    - python: 3.7
       env: TOXENV=py37-ircLAST
     - python: 3.8
       env: TOXENV=py38-irc121
@@ -316,6 +324,14 @@ matrix:
       env: TOXENV=py38-irc163
     - python: 3.8
       env: TOXENV=py38-irc164
+    - python: 3.8
+      env: TOXENV=py38-irc170
+    - python: 3.8
+      env: TOXENV=py38-irc171
+    - python: 3.8
+      env: TOXENV=py38-irc180
+    - python: 3.8
+      env: TOXENV=py38-irc190
     - python: 3.8
       env: TOXENV=py38-ircLAST
 
