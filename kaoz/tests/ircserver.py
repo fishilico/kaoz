@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Copyright © 2011-2013 Binet Réseau
-# See the LICENCE file for more informations
+# See the LICENCE file for more information
 
 """Basic IRC server, used for testing purpose only
 
-This server specificly does following things:
+This server specifically does following things:
     * Each user has its own view of channels.
     * There is no right on channel. Everyone is free to do everything.
     * The server shows some users who don't do anything.

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright © 2011-2013 Binet Réseau
-# See the LICENCE file for more informations
+# See the LICENCE file for more information
 
 from .common import unittest, get_local_conf, spawn_ircserver
 from .common import configure_ircserver_log, configure_logger

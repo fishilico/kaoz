@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright © 2011-2013 Binet Réseau
-# See the LICENCE file for more informations
+# See the LICENCE file for more information
 
 # This file is a part of Kaoz, a free irc notifier
 
@@ -63,7 +63,7 @@ class Publisher(irc.client.SimpleIRCClient):
     """A basic IRC publisher which sends lines to IRC
 
     This class uses a Queue to get messages from the outside. It deques the
-    messages into an internal list which containes (channel, message) tuples,
+    messages into an internal list which contains (channel, message) tuples,
     waiting to be sent. When the bot joined a channel, it may send waiting
     messages out, in a relatively slow rate to prevent server spamming.
     """
@@ -301,7 +301,7 @@ class Publisher(irc.client.SimpleIRCClient):
         self.connection.privmsg(chanstatus.name, message)
 
     def is_connected(self):
-        """Tell wether the bot is connected or not"""
+        """Tell whether the bot is connected or not"""
         return self.connection.is_connected() and self._has_welcome
 
     def channels(self):
@@ -312,7 +312,7 @@ class Publisher(irc.client.SimpleIRCClient):
         return chanlist
 
     def is_stopped(self):
-        """Tell wether the connection is stopped"""
+        """Tell whether the connection is stopped"""
         return self._stop.is_set()
 
     def run(self):
@@ -334,7 +334,7 @@ class Publisher(irc.client.SimpleIRCClient):
                     self._has_welcome = False
                     self.connection.disconnect("Bad internal state")
             except Exception:
-                logger.critical("An exception occured in IRC bot:")
+                logger.critical("An exception occurred in IRC bot:")
                 for line in traceback.format_exc().splitlines():
                     logger.critical(".. " + line)
 
@@ -369,7 +369,7 @@ class PublisherThread(threading.Thread):
             else:
                 logger.critical(traceback.format_exc().splitlines()[-1])
             if self._notify_systemd:
-                send_systemd_notification(b'STATUS=An exception occured\n')
+                send_systemd_notification(b'STATUS=An exception occurred\n')
         finally:
             if self._notify_systemd:
                 send_systemd_notification(b'STOPPING=1\n')

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # Copyright © 2011-2013 Binet Réseau
-# See the LICENCE file for more informations
+# See the LICENCE file for more information
 
 """Core of the Kaoz system."""
 
@@ -89,7 +89,7 @@ def main(argv):
     config = get_default_config()
     config.read(opts.config)
 
-    # Test wether the configuration gives a good server
+    # Test whether the configuration gives a good server
     if config.get('irc', 'server').endswith('example.org'):
         logger.fatal(
             "configuration file contains example irc server, aborting")

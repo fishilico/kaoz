@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright © 2011-2013 Binet Réseau
-# See the LICENCE file for more informations
+# See the LICENCE file for more information
 
 # This file is a part of Kaoz, a free irc notifier
 
@@ -66,7 +66,7 @@ class TCPListenerHandler(socketserver.BaseRequestHandler):
         logger.debug("Client disconnected from %s" % client_addr)
 
     def handle_line(self, line):
-        """Remove 'password:' prefix of the incomming line"""
+        """Remove 'password:' prefix of the incoming line"""
         line = line.strip()
         if not line:
             return

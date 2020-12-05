@@ -7,24 +7,24 @@ Kaoz
 General purpose
 ---------------
 
-Kaoz is a free notifier for IRC. It's purpose is to provide an easy to use way for System Administrators to send warnings and logs on any choosen IRC channel.
-It therefore uses a persistent daemon, which is called the *server* later on, that will listen on a given port, optionnaly with ssl enabled.
+Kaoz is a free notifier for IRC. It's purpose is to provide an easy to use way for System Administrators to send warnings and logs on any chosen IRC channel.
+It therefore uses a persistent daemon, which is called the *server* later on, that will listen on a given port, optionally with ssl enabled.
 The server expects lines to have the format ``password:channel:message``, like ``secret:#help:Hello``.
 ``password`` is a global password required to use the service.
 ``channel`` is an irc channel on the configured network. (Kaoz will join the channel to do so).
 A *client* is an application which connects to the server to send messages on IRC.
-Please note that, in case you whish to agregate many servers' notifications, you may have only one Kaoz server, but you should multiply clients.
+Please note that, in case you wish to aggregate many servers' notifications, you may have only one Kaoz server, but you should multiply clients.
 
 Licence
 -------
 
-Kaoz is provided under a MIT-like licence. See the licence file for more informations.
+Kaoz is provided under a MIT-like licence. See the ``LICENCE`` file for more information.
 
 Dependencies
 ------------
 
 * python
-* python ssl module (if you whish to use SSL)
+* python ssl module (if you wish to use SSL)
 * python irc library (https://bitbucket.org/jaraco/irc)
 
 Installation of the server
