@@ -11,6 +11,7 @@ script:
   # pip fail due to "Double requirement given"
   - if echo "$TOXENV" | grep -q '^py32-' ; then sed -e 's/^pytest$/pytest<3.1/' -i requirements_dev.txt ; fi
   - if echo "$TOXENV" | grep -q '^py33-' ; then sed -e 's/^pytest$/pytest<3.3/' -i requirements_dev.txt ; fi
+  - tox test
 
 matrix:
   include:
