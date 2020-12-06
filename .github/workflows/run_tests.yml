@@ -48,7 +48,10 @@ jobs:
         python-version: ${{ matrix.python }}
 
     - name: Install dependencies
-      run: pip install flake8 tox
+      run: pip install -r requirements_dev.txt
+
+    - name: Install tox
+      run: pip install tox
 
     - name: Run tests
       run: |
